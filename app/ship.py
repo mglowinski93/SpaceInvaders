@@ -1,14 +1,16 @@
 import pygame
-ship_image = 'images/ship.bmp'
 
-class Ship():
+ship_image = "images/ship.bmp"
+
+
+class Ship:
     def __init__(self, ai_settings, screen):
         self.moving_right = False
         self.moving_left = False
-        self.screen = screen #odnosnik do ekranu, na ktorym statek ma zostac wyswietlony
+        self.screen = screen
         self.ai_settings = ai_settings
 
-        self.image = pygame.image.load(ship_image) # wczytanie obrazu
+        self.image = pygame.image.load(ship_image)
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
@@ -23,8 +25,8 @@ class Ship():
             self.center -= self.ai_settings.ship_speed_factor
         self.rect.centerx = self.center
 
-    def blitme(self): #displat image
+    def blitme(self):  # display image
         self.screen.blit(self.image, self.rect)
 
     def center_ship(self):
-        self.center = self.screen_rect.centerx #umiesc statek na srodku ekranu
+        self.center = self.screen_rect.centerx

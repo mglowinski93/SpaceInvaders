@@ -1,7 +1,8 @@
 import pygame
 from pygame.sprite import Sprite
 
-alien_image  = 'images/alien.bmp'
+alien_image = "images/alien.bmp"
+
 
 class Alien(Sprite):
     def __init__(self, ai_settings, screen):
@@ -28,5 +29,5 @@ class Alien(Sprite):
             return True
 
     def update(self):
-        self.x += (self.ai_settings.alien_speed_factor * self.ai_settings.fleet_direction)
+        self.x += self.ai_settings.alien_speed_factor * self.ai_settings.fleet_direction
         self.rect.x = self.x
